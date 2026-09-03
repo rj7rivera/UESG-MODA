@@ -1,0 +1,8 @@
+export const loadHome = () => import('../pages/Home/Home.jsx')
+export const loadNosotros = () => import('../pages/Nosotros/Nosotros.jsx')
+export const loadRazonSocial = () => import('../pages/RazonSocial/RazonSocial.jsx')
+export const loadTienda = () => import('../pages/Tienda/Tienda.jsx')
+export const loadBlog = () => import('../pages/Blog/Blog.jsx')
+export const loadBlogArticle = () => import('../pages/Blog/BlogArticle.jsx')
+export const loadContacto = () => import('../pages/Contacto/Contacto.jsx')
+export const loadCartDrawer = () => import('../components/CartDrawer/CartDrawer.jsx')

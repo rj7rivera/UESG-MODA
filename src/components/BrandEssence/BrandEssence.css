@@ -1,0 +1,117 @@
+.brand-essence {
+  width: min(100%, 100rem);
+  padding: clamp(7rem, 13vw, 13rem) var(--page-gutter);
+  margin-inline: auto;
+  color: var(--color-black);
+}
+
+.brand-essence__heading p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.brand-essence__heading p span {
+  color: var(--color-accent-ink);
+}
+
+.brand-essence__heading h2 {
+  position: relative;
+  z-index: 2;
+  max-width: 9ch;
+  margin: 0 0 -0.13em;
+  font-size: clamp(5.5rem, 12vw, 12rem);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.72;
+  text-transform: uppercase;
+}
+
+.brand-essence__body {
+  display: grid;
+  grid-template-columns: minmax(24rem, 1.1fr) minmax(19rem, 0.9fr);
+  align-items: end;
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.brand-essence__media {
+  height: min(76svh, 52rem);
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-surface-secondary);
+}
+
+.brand-essence__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+.brand-essence__copy {
+  padding-bottom: clamp(1rem, 5vw, 5rem);
+}
+
+.brand-essence__copy > span {
+  display: block;
+  margin-bottom: 2rem;
+  color: var(--color-neutral-200);
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 9vw, 9rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.75;
+}
+
+.brand-essence__copy p {
+  max-width: 35rem;
+  padding-left: 1.5rem;
+  margin: 0;
+  border-left: 0.25rem solid var(--color-accent-ink);
+  color: var(--color-text);
+  font-size: clamp(0.9rem, 1.15vw, 1.1rem);
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .brand-essence__body {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-essence__heading h2 {
+    margin-bottom: 2.5rem;
+    font-size: clamp(4.5rem, 18vw, 7rem);
+  }
+
+  .brand-essence__body {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .brand-essence__media {
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .brand-essence__copy {
+    padding-bottom: 0;
+  }
+
+  .brand-essence__copy > span {
+    font-size: clamp(5rem, 23vw, 8rem);
+  }
+}
+
+@media (max-width: 430px) {
+  .brand-essence__heading h2 {
+    font-size: clamp(4rem, 19vw, 5.2rem);
+  }
+}

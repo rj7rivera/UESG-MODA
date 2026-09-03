@@ -1,0 +1,33 @@
+.tienda-page {
+  overflow: clip;
+  background: var(--color-background);
+}
+
+.shop-universe-chapter {
+  --catalog-card-muted: var(--color-text);
+  --catalog-image-background: var(--color-surface-secondary);
+  color: var(--color-black);
+  background: var(--color-background);
+  scroll-margin-top: 5rem;
+}
+
+.tienda-reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 700ms ease,
+    transform 800ms var(--ease-out-emphasized);
+}
+
+.tienda-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tienda-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

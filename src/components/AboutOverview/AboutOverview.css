@@ -1,0 +1,117 @@
+.about-overview {
+  width: min(100%, 100rem);
+  padding: clamp(6rem, 11vw, 11rem) var(--page-gutter);
+  margin-inline: auto;
+  color: var(--color-black);
+}
+
+.about-overview__header {
+  display: grid;
+  grid-template-columns: auto minmax(2rem, 1fr) auto;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: clamp(3.5rem, 7vw, 7rem);
+}
+
+.about-overview__header p {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.about-overview__header p:first-child {
+  color: var(--color-accent-ink);
+}
+
+.about-overview__header span {
+  height: 1px;
+  background: var(--color-border);
+}
+
+.about-overview__grid {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.82fr) minmax(26rem, 1.18fr);
+  align-items: center;
+  gap: clamp(4rem, 10vw, 11rem);
+}
+
+.about-overview__copy h2 {
+  max-width: 8ch;
+  margin: 0 0 2rem;
+  font-size: clamp(4rem, 7vw, 7.5rem);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 0.83;
+  text-transform: uppercase;
+}
+
+.about-overview__copy > p {
+  max-width: 38rem;
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(0.9rem, 1.15vw, 1.12rem);
+  line-height: 1.75;
+}
+
+.about-overview__media {
+  width: min(100%, 39rem);
+  margin: 0 0 0 auto;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-surface-secondary);
+}
+
+.about-overview__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+}
+
+@media (max-width: 900px) {
+  .about-overview__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-overview__header {
+    margin-bottom: 3rem;
+  }
+
+  .about-overview__grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .about-overview__copy h2 {
+    max-width: 10ch;
+  }
+
+  .about-overview__media {
+    width: 100%;
+    margin: 0;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (max-width: 430px) {
+  .about-overview__header {
+    grid-template-columns: auto 1fr;
+  }
+
+  .about-overview__header span {
+    display: none;
+  }
+
+  .about-overview__header p:last-child {
+    text-align: right;
+  }
+
+  .about-overview__copy h2 {
+    font-size: clamp(3.5rem, 17vw, 5rem);
+  }
+}

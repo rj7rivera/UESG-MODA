@@ -1,0 +1,46 @@
+.nosotros-page {
+  overflow: clip;
+  background: var(--color-background);
+}
+
+.nosotros-reveal {
+  opacity: 0;
+  transform: translateY(1.75rem);
+  transition:
+    opacity 700ms ease,
+    transform 800ms var(--ease-out-emphasized);
+}
+
+.nosotros-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nosotros-image-reveal {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 900ms var(--ease-out-emphasized) 100ms;
+}
+
+.nosotros-reveal.is-visible .nosotros-image-reveal {
+  clip-path: inset(0);
+}
+
+.nosotros-image-reveal img {
+  transform: scale(1.02);
+  transition: transform 900ms var(--ease-out-emphasized) 100ms;
+}
+
+.nosotros-reveal.is-visible .nosotros-image-reveal img {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nosotros-reveal,
+  .nosotros-image-reveal,
+  .nosotros-image-reveal img {
+    opacity: 1;
+    clip-path: none;
+    transform: none;
+    transition: none;
+  }
+}

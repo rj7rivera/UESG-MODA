@@ -1,0 +1,109 @@
+.shop-universe-nav {
+  padding: clamp(3rem, 5vw, 5rem) var(--page-gutter-compact);
+  color: var(--color-white);
+  background: var(--color-black);
+  scroll-margin-top: 6rem;
+}
+
+.shop-universe-nav__intro {
+  margin: 0 0 clamp(1.75rem, 3vw, 2.75rem);
+  color: rgb(255 255 255 / 56%);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.shop-universe-nav__track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 3rem);
+}
+
+.shop-universe-nav__link {
+  display: flex;
+  min-height: 7.75rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgb(255 255 255 / 28%);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 220ms ease;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.shop-universe-nav__number {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+.shop-universe-nav__name {
+  font-family: var(--font-display);
+  font-size: clamp(2.7rem, 3.8vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.82;
+  text-transform: uppercase;
+  transition: color 220ms ease, transform 220ms ease;
+}
+
+.shop-universe-nav__link:hover,
+.shop-universe-nav__link:focus-visible {
+  border-color: var(--color-accent);
+}
+
+.shop-universe-nav__link:hover .shop-universe-nav__name,
+.shop-universe-nav__link:focus-visible .shop-universe-nav__name {
+  color: var(--color-accent);
+  transform: translateX(0.3rem);
+}
+
+@media (max-width: 1024px) {
+  .shop-universe-nav__track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .shop-universe-nav {
+    padding-inline: 0;
+  }
+
+  .shop-universe-nav__intro {
+    padding-inline: 1.25rem;
+  }
+
+  .shop-universe-nav__track {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 1.25rem 1rem;
+    gap: 1rem;
+    scroll-padding-inline: 1.25rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+
+  .shop-universe-nav__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shop-universe-nav__link {
+    min-width: min(76vw, 19rem);
+    min-height: 8.5rem;
+    scroll-snap-align: start;
+  }
+
+  .shop-universe-nav__name {
+    font-size: clamp(3.3rem, 15vw, 4.6rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shop-universe-nav__link,
+  .shop-universe-nav__name {
+    transition: none;
+  }
+}

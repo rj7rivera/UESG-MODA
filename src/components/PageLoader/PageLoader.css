@@ -1,0 +1,134 @@
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: var(--color-background-dark);
+  color: var(--color-text-on-dark);
+  opacity: 1;
+  transition: opacity 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-loader--exiting {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.page-loader__logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page-loader__logo {
+  display: block;
+  width: clamp(9rem, 18vw, 13rem);
+  height: auto;
+  object-fit: contain;
+  animation: page-loader-rotation 1.7s linear infinite;
+}
+
+.page-loader__progress,
+.page-loader__label {
+  position: absolute;
+  bottom: calc(clamp(1.5rem, 4vw, 3.5rem) + env(safe-area-inset-bottom));
+  line-height: 1;
+}
+
+.page-loader__progress {
+  left: calc(clamp(1.25rem, 4vw, 4rem) + env(safe-area-inset-left));
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.page-loader__label {
+  right: calc(clamp(1.25rem, 4vw, 4rem) + env(safe-area-inset-right));
+  display: flex;
+  align-items: baseline;
+  color: var(--color-text-on-dark);
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.page-loader__label-text {
+  letter-spacing: 0.24em;
+}
+
+.page-loader__dots {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.06em;
+  margin-left: 0.08em;
+}
+
+.page-loader__dot {
+  display: inline-block;
+  line-height: 1;
+  opacity: 0.58;
+  transform-origin: center bottom;
+  animation: page-loader-dot-pulse 1.2s ease-in-out infinite;
+}
+
+.page-loader__dot--1 {
+  font-size: 1em;
+}
+
+.page-loader__dot--2 {
+  font-size: 1.15em;
+  animation-delay: 200ms;
+}
+
+.page-loader__dot--3 {
+  font-size: 1.3em;
+  animation-delay: 400ms;
+}
+
+@keyframes page-loader-rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes page-loader-dot-pulse {
+  0%,
+  55%,
+  100% {
+    opacity: 0.58;
+    transform: translateY(0) scale(1);
+  }
+
+  22% {
+    opacity: 1;
+    transform: translateY(-0.08em) scale(1.08);
+  }
+}
+
+@media (max-width: 600px) {
+  .page-loader__logo {
+    width: clamp(7.5rem, 34vw, 10rem);
+  }
+
+  .page-loader__progress {
+    font-size: clamp(2.25rem, 12vw, 3.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loader {
+    transition-duration: 80ms;
+  }
+
+  .page-loader__logo {
+    animation: none;
+  }
+
+  .page-loader__dot {
+    animation: none;
+  }
+}

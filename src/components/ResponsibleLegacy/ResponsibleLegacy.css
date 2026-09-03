@@ -1,0 +1,116 @@
+.responsible-legacy {
+  position: relative;
+  display: grid;
+  min-height: 94vh;
+  min-height: 94svh;
+  overflow: hidden;
+  color: var(--color-white);
+  background: var(--color-black);
+  isolation: isolate;
+  place-items: end start;
+}
+
+.responsible-legacy__image,
+.responsible-legacy__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.responsible-legacy__image {
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(0.82) contrast(1.06);
+  transform: scale(1.02);
+  transition: transform 900ms var(--ease-out-emphasized);
+}
+
+.responsible-legacy.is-visible .responsible-legacy__image {
+  transform: scale(1);
+}
+
+.responsible-legacy__overlay {
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 90%) 0%, rgb(0 0 0 / 58%) 58%, rgb(0 0 0 / 32%) 100%),
+    linear-gradient(0deg, rgb(0 0 0 / 88%) 0%, transparent 68%);
+}
+
+.responsible-legacy__content {
+  position: relative;
+  z-index: 1;
+  width: min(88rem, 92vw);
+  padding: clamp(5rem, 10vw, 10rem) var(--page-gutter);
+}
+
+.responsible-legacy__eyebrow {
+  margin: 0 0 1.5rem;
+  color: var(--color-accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.responsible-legacy h2 {
+  max-width: 9ch;
+  margin: 0 0 2.5rem;
+  font-size: clamp(5.2rem, 11vw, 11rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.72;
+  text-transform: uppercase;
+}
+
+.responsible-legacy h2 span {
+  display: block;
+}
+
+.responsible-legacy__accent {
+  color: var(--color-accent);
+}
+
+.responsible-legacy__text {
+  max-width: 52rem;
+  margin: 0;
+  color: rgb(255 255 255 / 78%);
+  font-size: clamp(0.86rem, 1vw, 1rem);
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .responsible-legacy {
+    min-height: 100svh;
+  }
+
+  .responsible-legacy__image {
+    object-position: 46% center;
+  }
+
+  .responsible-legacy__overlay {
+    background: linear-gradient(0deg, rgb(0 0 0 / 94%) 0%, rgb(0 0 0 / 64%) 72%, rgb(0 0 0 / 50%) 100%);
+  }
+
+  .responsible-legacy__content {
+    width: 100%;
+    padding-bottom: 5rem;
+  }
+
+  .responsible-legacy h2 {
+    font-size: clamp(4.4rem, 18vw, 7rem);
+  }
+}
+
+@media (max-width: 430px) {
+  .responsible-legacy h2 {
+    font-size: clamp(3.8rem, 18.5vw, 5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .responsible-legacy__image {
+    transform: none;
+    transition: none;
+  }
+}

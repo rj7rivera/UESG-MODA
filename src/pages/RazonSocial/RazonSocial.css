@@ -1,0 +1,50 @@
+.razon-social-page {
+  overflow: clip;
+  background: var(--color-background);
+}
+
+.social-impacts {
+  background: var(--color-background);
+}
+
+.social-reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 700ms ease,
+    transform 800ms var(--ease-out-emphasized);
+}
+
+.social-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-image-reveal {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 900ms var(--ease-out-emphasized) 100ms;
+}
+
+.social-reveal.is-visible .social-image-reveal {
+  clip-path: inset(0);
+}
+
+.social-image-reveal img {
+  transform: scale(1.02);
+  transition: transform 900ms var(--ease-out-emphasized) 100ms;
+}
+
+.social-reveal.is-visible .social-image-reveal img {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-reveal,
+  .social-image-reveal,
+  .social-image-reveal img {
+    opacity: 1;
+    clip-path: none;
+    transform: none;
+    transition: none;
+  }
+}
